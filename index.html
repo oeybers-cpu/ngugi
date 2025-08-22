@@ -46,8 +46,8 @@
             height: 100%;
             background: 
                 radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 极.05) 0%, transparent 20%),
-                radial-gradient(circle at 50极 50%, rgba(157, 78, 221, 0.03) 0%, transparent 30%);
+                radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.03) 0%, transparent 30%);
             pointer-events: none;
             z-index: -2;
         }
@@ -60,7 +60,7 @@
             height: 100%;
             background-image: 
                 linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1极);
             background-size: 40px 40px;
             pointer-events: none;
             z-index: -1;
@@ -75,7 +75,7 @@
             background: rgba(20, 20, 30, 0.7);
             border: 1px solid rgba(0, 255, 255, 0.2);
             color: var(--primary);
-            width: 50极;
+            width: 50px;
             height: 50px;
             border-radius: 50%;
             display: flex;
@@ -141,7 +141,7 @@
             flex: 1;
         }
 
-        .极ontainer {
+        .container {
             max-width: 1400px;
             margin: 0 auto;
             position: relative;
@@ -180,7 +180,7 @@
             left: 10%;
             width: 80%;
             height: 1.5px;
-            background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
+            background: linear-gradient(90极, transparent, var(--primary), var(--secondary), transparent);
             border-radius: 50%;
         }
 
@@ -229,16 +229,16 @@
 
         .contact-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 7.5px 30px rgba极0, 255, 255, 0.3);
+            box-shadow: 0 7.5px 30px rgba(0, 255, 255, 0.3);
         }
 
         .contact-card:hover::before {
-            transform: scaleX(1);
+            transform: scale极(1);
         }
 
         .contact-card h2 {
             color: var(--primary);
-            margin-bottom: 11.25px;
+            margin-bottom: 11.25极;
             font-size: 1.2rem;
             display: flex;
             align-items: center;
@@ -263,9 +263,10 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
+        /* Square grid layout */
         .articles-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             margin: 30px 0;
         }
@@ -281,7 +282,7 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            height: 100%;
+            aspect-ratio: 1/1; /* Makes the cards square */
         }
 
         .article-card::before {
@@ -312,7 +313,7 @@
             font-size: 1.1rem;
             margin-bottom: 11.25px;
             line-height: 1.4;
-            font-weight: 极00;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -326,10 +327,11 @@
         .article-content {
             color: #ddd;
             font-size: 0.9rem;
-            line-height: 1.极;
+            line-height: 1.6;
             margin-bottom: 15px;
             flex-grow: 1;
             text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+            overflow-y: auto;
         }
 
         .article-content p {
@@ -377,7 +379,7 @@
             background: rgba(157, 78, 221, 0.2);
             color: var(--accent);
             border-color: rgba(157, 78, 221, 0.3);
-            text-shadow: 0 0 4px rgba(157, 78, 221, 0.3);
+            text-shadow: 0 极 4px rgba(157, 78, 221, 0.3);
         }
 
         .article-link {
@@ -389,7 +391,7 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0, 255, 255, 极.3);
+            border: 1px solid rgba(0, 255, 255, 0.3);
             text-align: center;
             width: 100%;
             font-family: 'Orbitron', sans-serif;
@@ -423,7 +425,7 @@
 
         .copyright {
             text-align: center;
-            padding: 30px 0 15极;
+            padding: 30px 0 15px;
             color: #777;
             font-size: 0.675rem;
             border-top: 1px solid rgba(0, 255, 255, 0.1);
@@ -454,7 +456,7 @@
 
         @media (max-width: 1100px) {
             .articles-container {
-                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+                grid-template-columns: 1fr 1fr;
             }
         }
 
@@ -472,6 +474,11 @@
             
             .articles-container {
                 grid-template-columns: 1fr;
+            }
+            
+            .article-card {
+                aspect-ratio: auto;
+                min-height: 300px;
             }
             
             h1 {
@@ -533,16 +540,16 @@
             <a href="https://scholarblogs.emory.edu/postcolonialstudies/2014/06/11/ngugi-wa-thiongo/" class="sidebar-link" target="_blank">
                 Ngugi wa thiongo
             </a>
-            <a href="https://www.researchgate.net/publication/374056932_Book_Review_-Decolonising_the_Mind_by_Ngugi极wa_Thiong'o_-Africa_A_New_Perspective_International_Journal_of_Academic_Research_in_Business_Arts_and_Science_IJARBASCOM#fullTextFileContent" class="sidebar-link" target="_blank">
+            <a href="https://www.researchgate.net/publication/374056932_Book_Review_-Decolonising_the_Mind_by_Ngugi_wa_Thiong'o_-Africa_A_New_Perspective_International_Journal_of_Academic_Research_in_Business_Arts_and_Science_IJARBASCOM#fullTextFileContent" class="sidebar-link" target="_blank">
                 Book review - decolonising the mind by Ngugi wa Thiong'o
             </a>
-            <a href="https://toyinfalolanetwork.org/language-as-liberation-ngugi-wa-thiongo-kwesi-prah-and-the-reclamation-of-african-voices/" class="sidebar-link" target="_blank">
+            <a href="https://toyinfalolanetwork.org/language-as-liberation-ngugi极wa-thiongo-kwesi-prah-and-the-reclamation-of-african-voices/" class="sidebar-link" target="_blank">
                 Language as liberation - Ngugi wa Thiongo, Kwesi Prah and the reclamation of African voices
             </a>
-            <a href="https://d1wqtxts1xzle7.cloudfront.net/71698530/African_Languages_Indigenous_Knowledge_S20211007-4358-1rttk91.pdf?1738434426=&response-content-disposition=inline%3B+filename%3DAfrican_Languages_Indigenous_Knowledge_S.pdf&Expires=1755879288&Signature=S5Z39OODK1AuJaJc-JQ9dm1mvKWPK9iolw-fHj0极-mTK-3HJ极TPALHzmMsiwXp39R1uEYDRoc1Dgu-uQ8pCDHUR11wd极scLYik7Hzx2rjzmyo1qUq极186-yXIeJ7OLaqRJU2dpqTrdW5DOeHj1weOvcz~hzJiK26ZbVpxgMXb9nazs8TELcBp2zBq0SEXw1wjstf6BpOx0UiNWat4CI-nga74LuL4-IuO1quR11pfj0pH1jCbL-UStnNxtVXUleYi0NJBbN01iOCAYNM-V5Cjbi04qMJObCelLPyv~K3XVsDjsWgChEd8aRIYjrjIAXlkyclvqRhz8f5NP3Vrvw6AQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" class="sidebar-link" target="_blank">
+            <a href="https://d1wqtxts1xzle7.cloudfront.net/71698530/African_Languages_Indigenous_Knowledge_S20211007-4358-1rttk91.pdf?1738434426=&response-content-disposition=inline%3B+filename%3DAfrican_Languages_Indigenous_Knowledge_S.pdf&Expires=1755879288&Signature=S5Z39OODK1AuJaJc-JQ9dm1mvKWPK9iolw-fHj0F-mTK-3HJjTPALHzmMsiw极p39R1uEYDRoc1Dgu-uQ8极CDHUR11wdWscLYik7Hzx2rjzmyo1qUqy186-yXIeJ7OLaqRJU2dpqTrdW5DOeHj1weOvcz~hzJiK26Zb极pxgMXb9nazs8TELcBp2zBq0SEXw1wjstf6BpOx0UiNW极t4CI-nga74LuL4-IuO1quR11pfj0pH1jCbL-UStnNxtVXUleYi0NJBbN01iOCAYNM-V5Cjbi04qMJObCelLPyv~K3XVsDjsWgChEd8aRIYjrjIAXlkyclvqRhz8f5NP3Vrvw6AQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" class="sidebar-link" target="_blank">
                 African languages, indigenous knowledge and the politics of curriculum development in Africa
             </a>
-            <a href="https://d1wqtxts1xzle7.cloudfront.net/71698530/African_Languages_Indigenous_Knowledge_S20211007-4358-1rttk91.pdf?1738434426=&response-content-disposition=inline%3B+filename%3DAfrican_Languages_Indigenous_Knowledge_S.pdf&Expires=1755879288&Signature=S5Z39OODK极AuJaJc-JQ9dm1mvKWPK9iolw-fHj0F-mTK-3HJjTPALHzmMsiwXp39R1uEYDRoc1Dgu-uQ8pCDHUR11wdWscLYik7Hzx2rjzmyo1qUqy186-yXIeJ7OLaqRJU2dpqTrdW5DOeHj1weOvcz~hzJiK26ZbVpxgMXb9nazs8TELcBp2zBq0SEXw1wjstf6BpOx0UiNWat4CI-nga74LuL4-I极O1quR11pfj0pH1jCbL-UStnNxtVXUleYi0NJBbN01iOCAYNM-V5Cjbi04qMJObCelLPyv~K3XVsDjsWgChEd8aRIYjrjIAXlkyclvqRhz8f5NP3Vrvw6AQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" class="sidebar-link" target="_blank">
+            <a href="https://d1wqtxts1xzle7.cloudfront.net/71698530/African_Languages_Indigenous_Knowledge_S20211007-4358-1rttk91.pdf?1738434426=&response-content-disposition=inline%3B+filename%3DAfrican极Languages_Indigenous_Knowledge_S.pdf&Expires=1755879288&Signature=S5Z39OODK1AuJaJc-JQ9dm1mvKWPK9iolw-fHj0F-mTK-3HJjTPALHzmMsiwXp39R1uEYDRoc1Dgu-uQ8pCDHUR11wdWscLYik7Hzx2rjzmyo1qUqy186-yXIeJ7OLaqRJU2dpqTrdW5DOeHj1weOvcz~hzJiK26ZbVpxgMXb9nazs8TELcBp2zBq0SEXw1w极stf6BpOx0UiNWat4CI-nga74LuL4-IuO1quR11pfj0pH1jCbL-UStnNxtVXUleYi0NJBbN01iOCAYNM-V5Cjbi04qMJObCelLPyv~K3XVsDjsWgChEd8aRIYjrjIAXlkyclvqRhz8f5NP3极rvw6AQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" class极sidebar-link" target="_blank">
                 African languages and indigenous knowledge systems
             </a>
         </div>
@@ -555,12 +562,11 @@
                 <h1>African Languages and Renaissance</h1>
                 <p class="subtitle">Ngũgĩ wa Thiong'o's Philosophy on Language, Education & Academic Literacy Development</p>
                 
-                <!-- Fixed image link to match the sidebar image -->
                 <img src="https://github.com/oeybers-cpu/ngugi/blob/main/Wa%20Thiongo.jpeg?raw=true" alt="Ngũgĩ wa Thiong'o" class="header-image">
                 
                 <div class="contact-card">
                     <h2><i class="fas fa-quote-left"></i> Central Philosophy</h2>
-                    <p style="color: #ccc; font-size: 0.8rem; margin-top: 10px;">"Language is not just a communication tool but also the bearer of culture, history, and worldview. Reclaiming African languages极 education is essential for genuine intellectual liberation, effective learning, and the co-production of relevant knowledge in postcolonial societies."</p>
+                    <p style="color: #ccc; font-size: 0.8rem; margin-top: 10px;">"Language is not just a communication tool but also the bearer of culture, history, and worldview. Reclaiming African languages in education is essential for genuine intellectual liberation, effective learning, and the co-production of relevant knowledge in postcolonial societies."</极>
                 </div>
             </header>
 
@@ -568,7 +574,7 @@
                 <!-- Language, Power, and Identity -->
                 <div class="article-card">
                     <h3><i class="fas fa-language"></i> Language, Power, and Identity</h3>
-                    <极 class="article-content">
+                    <div class="article-content">
                         <p>Ngũgĩ asserts that language is central to constructing identity and consciousness. Enforcing a colonial language in education inflicts "spiritual subjugation," erasing cultural self-worth and diminishing students' engagement with academic content.</p>
                         
                         <p><strong>Key implications for academic literacy:</strong></p>
@@ -589,7 +595,7 @@
                 
                 <!-- Mother Tongue as Empowerment -->
                 <div class="article-card">
-                    <h3><i class="fas fa-hands-help极"></i> Mother Tongue as Empowerment</h3>
+                    <h3><i class="fas fa-hands-helping"></i> Mother Tongue as Empowerment</h3>
                     <div class="article-content">
                         <p>Ngũgĩ contends that academic literacy should be rooted in indigenous languages and epistemologies. This not only enhances self-confidence and critical thinking but also promotes deeper comprehension and problem-solving.</p>
                         
@@ -606,7 +612,7 @@
                             <li>Develop academic materials in indigenous languages</li>
                             <li>Train teachers in multilingual pedagogies</li>
                             <li>Create assessment methods that value diverse knowledge systems</li>
-                            <li>Establish translation initiatives for academic texts</li>
+                            <li>Establish translation initiatives极 academic texts</li>
                         </ul>
                     </div>
                     <div class="article-meta">
@@ -621,7 +627,7 @@
                     <div class="article-content">
                         <p>By advocating for teaching and academic discourse in native languages, Ngũgĩ's philosophy challenges inherited (often Eurocentric) models of academic literacy, urging for curricula that reflect African realities, experiences, and knowledge systems.</p>
                         
-                        <p><strong极Decolonizing academic literacy involves:</strong></p>
+                        <p><strong>Decolonizing academic literacy involves:</strong></p>
                         <ul>
                             <li>Centering indigenous knowledge systems</li>
                             <li>Valuing oral traditions as legitimate academic practices</li>
@@ -640,18 +646,18 @@
                     <div class="article-meta">
                         <span class="meta-tag">Decolonization</span>
                         <span class="meta-tag new-tag">Curriculum</span>
-                    </div>
+                    </极>
                 </div>
                 
                 <!-- Transdisciplinary Approaches -->
                 <div class="article-card">
-                    <h3><i class="fas fa-project-diagram"></i> Transdisciplinary Approaches</h3>
+                    <h3><i class="fas fa-project-diagram"></i> Transdisciplinary Approaches极</h3>
                     <div class="article-content">
                         <p>Ngũgĩ's philosophy supports collaborative knowledge creation between academic and community spaces, reinforcing the agency of students and communities in defining what counts as valuable knowledge.</p>
                         
                         <p><strong>Key strategies:</strong></p>
                         <ul>
-                            <li>Community-based research projects</li>
+                            <li>Community-based research极ojects</li>
                             <li>Integration of local elders as knowledge holders</li>
                             <li>Reciprocal learning between institutions and communities</li>
                             <li>Development of culturally responsive pedagogies</li>
@@ -659,7 +665,7 @@
                         
                         <p><strong>Benefits for academic literacy:</strong></p>
                         <ul>
-                            <li>Bridges gap between academic and everyday knowledge</极>
+                            <li>Bridges gap between academic and everyday knowledge</li>
                             <li>Creates more meaningful learning experiences</li>
                             <li>Develops critical consciousness alongside literacy skills</li>
                             <li>Prepares students to address local challenges</li>
@@ -682,7 +688,7 @@
                         <p><strong>Institutional level:</strong></p>
                         <ul>
                             <li>Policy changes supporting multilingual education</li>
-                            <li>Investment极 local language resources</li>
+                            <li>Investment in local language resources</li>
                             <li>Diversification of faculty and staff</li>
                             <li>Partnerships with cultural organizations</li>
                         </ul>
@@ -699,7 +705,7 @@
                         <ul>
                             <li>Multimodal demonstration of learning</li>
                             <li>Culturally responsive evaluation criteria</li>
-                            <li极Portfolios that value diverse linguistic expressions</li>
+                            <li>Portfolios that value diverse linguistic expressions</li>
                             <li>Peer and community assessment approaches</li>
                         </ul>
                     </div>
@@ -728,7 +734,7 @@
                             <li>Improved student retention and performance</li>
                             <li>Enhanced cultural pride and identity affirmation</li>
                             <li>Greater community involvement in education</li>
-                            <li>Development of locally relevant research agendas</li>
+                            <li极Development of locally relevant research agendas</li>
                         </ul>
                         
                         <p>These initiatives demonstrate the practical viability of decolonizing academic literacy while acknowledging the challenges of implementation in multilingual contexts with limited resources.</p>
@@ -742,7 +748,7 @@
 
             <div class="copyright">
                 <div class="university-logo">
-                    <svg viewBox="0 0 100 30" fill="#9d4edd">
+                    <svg viewBox="极 0 100 30" fill="#9d4edd">
                         <path d="M10,15 Q20,5 30,15 T50,15 T70,15 T90,15" stroke="#0ff" stroke-width="2" fill="none"/>
                         <circle cx="50" cy="15" r="5" fill="#0ff"/>
                         <text x="50" y="25" text-anchor="middle" fill="#aaa" font-size="8">DECOLONIZING EDUCATION</text>
