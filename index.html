@@ -23,8 +23,6 @@
             --card-bg: rgba(20, 20, 30, 0.7);
             --sidebar-width: 280px;
             --lighter-blue: #6bd5ff;
-            --earth: #d4a017;
-            --green: #4caf50;
         }
 
         body {
@@ -86,13 +84,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+            box-shadow: 极 0 15px rgba(0, 255, 255, 0.2);
         }
 
         .back-button:hover {
             background: rgba(0, 255, 255, 0.2);
             transform: translateX(-5px);
-            box-shadow: 极 0 20px rgba(0, 255, 255, 0.4);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
         }
 
         /* Sidebar styling */
@@ -100,7 +98,7 @@
             width: var(--sidebar-width);
             padding: 20px;
             background: var(--card-bg);
-            border: 1px solid rgba(212, 160, 23, 0.3);
+            border: 1px solid rgba(0, 255, 255, 0.1);
             border-radius: 11.25px;
             margin-right: 30px;
             backdrop-filter: blur(10px);
@@ -113,7 +111,7 @@
             width: 100%;
             border-radius: 8px;
             margin-bottom: 20px;
-            border: 1px solid rgba(212, 160, 23, 0.3);
+            border: 1px solid rgba(0, 255, 255, 0.2);
         }
 
         .sidebar-links {
@@ -123,19 +121,19 @@
         }
 
         .sidebar-link {
-            color: var(--earth);
+            color: var(--primary);
             text-decoration: none;
             padding: 12px 15px;
             border-radius: 8px;
-            background: rgba(212, 160, 23, 0.05);
-            border: 1px solid rgba(212, 160, 23, 0.1);
+            background: rgba(0, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.1);
             transition: all 0.3s ease;
             font-size: 0.9rem;
         }
 
         .sidebar-link:hover {
-            background: rgba(212, 160, 23, 0.15);
-            box-shadow: 0 0 15px rgba(212, 160, 23, 0.5);
+            background: rgba(0, 255, 255, 0.15);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
             transform: translateY(-2px);
         }
 
@@ -153,8 +151,8 @@
             text-align: center;
             padding: 30px 0 15px;
             position: relative;
-            background: linear-gradient(to right, rgba(212, 160, 23, 0.1), transparent);
-            border-bottom: 1px solid rgba(212, 160, 23, 0.2);
+            background: linear-gradient(to right, rgba(0, 255, 255, 0.1), transparent);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
             margin-bottom: 22.5px;
             border-radius: 0 0 15px 15px;
         }
@@ -162,13 +160,13 @@
         h1 {
             font-size: 2.4rem;
             margin-bottom: 7.5px;
-            background: linear-gradient(90deg, var(--earth), var(--green));
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             text-transform: uppercase;
             letter-spacing: 2.25px;
-            text-shadow: 0 0 11.25px rgba(212, 160, 23, 0.5);
+            text-shadow: 0 0 11.25px rgba(0, 255, 255, 0.5);
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
             position: relative;
@@ -182,7 +180,7 @@
             left: 10%;
             width: 80%;
             height: 1.5px;
-            background: linear-gradient(90deg, transparent, var(--earth), var(--green), transparent);
+            background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
             border-radius: 50%;
         }
 
@@ -198,19 +196,19 @@
             width: 200px;
             margin: 15px auto;
             border-radius: 8px;
-            border: 2px solid rgba(212, 160, 23, 0.3);
+            border: 2px solid rgba(0, 255, 255, 0.3);
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
 
         .contact-card {
             background: var(--card-bg);
-            border: 1px solid rgba(212, 160, 23, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.1);
             border-radius: 11.25px;
             padding: 15px;
-            max-width: 600px;
+           极 max-width: 600px;
             margin: 22.5px auto;
             backdrop-filter: blur(10px);
-            box-shadow: 0 0 22.5px rgba(212, 160, 23, 0.1);
+            box-shadow: 0 0 22.5px rgba(0, 255, 255, 0.1);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -223,23 +221,23 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(90deg, var(--earth), var(--green));
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 极.5s ease;
+            transition: transform 0.5s ease;
         }
 
         .contact-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 7.5px 30px rgba(212, 160, 23, 0.3);
+            box-shadow: 0 7.5px 30px rgba(0, 255, 255, 0.3);
         }
 
-        .contact-card:hover::before {
+        .contact-card:hover极:before {
             transform: scaleX(1);
         }
 
         .contact-card h2 {
-            color: var(--earth);
+            color: var(--primary);
             margin-bottom: 11.25px;
             font-size: 1.2rem;
             display: flex;
@@ -249,7 +247,7 @@
         }
 
         .contact-card a {
-            color: var(--earth);
+            color: var(--primary);
             text-decoration: none;
             font-size: 0.825rem;
             transition: all 0.3s ease;
@@ -260,8 +258,8 @@
         }
 
         .contact-card a:hover {
-            color: var(--green);
-            text-shadow: 0 0 11.25px rgba(76, 175, 80, 0.7);
+            color: var(--secondary);
+            text-shadow: 0 0 11.25px rgba(255, 0, 255, 0.7);
             background: rgba(255, 255, 255, 0.1);
         }
 
@@ -274,7 +272,7 @@
 
         .article-card {
             background: var(--card-bg);
-            border: 1px solid rgba(212, 160, 23, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.1);
             border-radius: 11.25px;
             padding: 18.75px;
             transition: all 0.4s ease;
@@ -292,8 +290,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 3极;
-            background: linear-gradient(90deg, var(--earth), var(--green));
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.5s ease;
@@ -302,7 +300,7 @@
         .article-card:hover {
             transform: translateY(-7.5px);
             box-shadow: 0 11.25px 30px rgba(0, 0, 0, 0.4);
-            border-color: rgba(212, 160, 23, 0.4);
+            border-color: rgba(0, 255, 255, 0.4);
         }
 
         .article-card:hover::before {
@@ -310,7 +308,7 @@
         }
 
         .article-card h3 {
-            color: var(--earth);
+            color: var(--lighter-blue);
             font-size: 1.1rem;
             margin-bottom: 11.25px;
             line-height: 1.4;
@@ -318,7 +316,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            text-shadow: 0 0 8px rgba(212, 160, 23, 0.6);
+            text-shadow: 0 0 8px rgba(107, 213, 255, 0.6);
         }
 
         .article-card h3 i {
@@ -348,12 +346,12 @@
         }
 
         .citation {
-            background: rgba(212, 160, 23, 0.1);
-            color: var(--earth);
+            background: rgba(0, 255, 255, 0.1);
+            color: var(--primary);
             padding: 3.75px 9px;
             border-radius: 15px;
             font-size: 0.7rem;
-            border: 1px solid rgba(212, 160, 23, 0.2);
+            border: 1px solid rgba(0, 255, 255, 0.2);
             display: inline-block;
             margin: 5px 0;
         }
@@ -366,35 +364,35 @@
         }
 
         .meta-tag {
-            background: rgba(212, 极60, 23, 0.1);
-            color: var(--earth);
+            background: rgba(0, 255, 255, 0.1);
+            color: var(--primary);
             padding: 3.75px 9px;
             border-radius: 15px;
             font-size: 0.6375rem;
-            border: 1px solid rgba(212, 160, 23, 0.2);
-            text-shadow: 0 0 4px rgba(212, 160, 23, 0.3);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            text-shadow: 0 0 4px rgba(0, 255, 255, 0.3);
         }
 
         .new-tag {
-            background: rgba(76, 175, 80, 0.2);
-            color: var(--green);
-            border-color: rgba(76, 175, 80, 0.3);
-            text-shadow: 0 0 4px rgba(76, 175, 80, 0.3);
+            background: rgba(157, 78, 221, 0.2);
+            color: var(--accent);
+            border-color: rgba(157, 78, 221, 0.3);
+            text-shadow: 0 0 4px rgba(157, 78, 221, 0.3);
         }
 
         .article-link {
             display: inline-block;
             color: var(--light);
-            background: linear-gradient(90deg, rgba(212, 160, 23, 0.2), rgba(76, 175, 80, 0.2));
-            padding: 7.5px 15px;
+            background: linear-gradient(90极, rgba(0, 255, 255, 0.2), rgba(157, 78, 221, 0.2));
+            padding: 7.5极 15px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: 1px solid rgba(212, 160, 23, 0.3);
+            border: 1px solid rgba(0, 255, 255, 0.3);
             text-align: center;
             width: 100%;
-            font-family: '极rbitron', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             letter-spacing: 0.75px;
             position: relative;
             overflow: hidden;
@@ -413,9 +411,9 @@
         }
 
         .article-link:hover {
-            background: linear-gradient(90deg, var(--earth), var(--green));
+            background: linear-gradient(90deg, var(--primary), var(--accent));
             color: var(--darker);
-            box-shadow: 0 0 15px rgba(212, 160, 23, 0.5);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
             transform: translateY(-2.25px);
         }
 
@@ -428,12 +426,23 @@
             padding: 30px 0 15px;
             color: #777;
             font-size: 0.675rem;
-            border-top: 1px solid rgba(212, 160, 23, 0.1);
+            border-top: 1px solid rgba(0, 255, 255, 0.1);
             margin-top: 22.5px;
         }
 
         .copyright p {
             margin: 6px 0;
+        }
+
+        .copyright a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .copyright a:hover {
+            color: var(--secondary);
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
         }
 
         .university-logo {
@@ -527,13 +536,13 @@
             <a href="https://www.researchgate.net/publication/374056932_Book_Review_-Decolonising_the_Mind_by_Ngugi_wa_Thiong'o_-Africa_A_New_Perspective_International_Journal_of_Academic_Research_in_Business_Arts_and_Science_IJARBASCOM#fullTextFileContent" class="sidebar-link" target="_blank">
                 Book review - decolonising the mind by Ngugi wa Thiong'o
             </a>
-            <a href="https://toyinfalolanetwork.org/language-as-liberation-ngugi-wa-thiongo-kwesi-prah-and-the-reclamation-of-african-voices/" class="sidebar-link" target="_blank">
+            <a href="https://toyinf极olanetwork.org/language-as-liberation-ngugi-wa-thiongo-kwesi-prah-and-the-reclamation-of-african-voices/" class="sidebar-link" target="_blank">
                 Language as liberation - Ngugi wa Thiongo, Kwesi Prah and the reclamation of African voices
             </a>
-            <a href="https://d1wqtxts1xzle7.cloudfront.net/71698530/African_Languages_Indigenous_Knowledge_S20211007-4358-1rttk91.pdf?1738434426=&response-content-disposition=inline%3B+filename%3DAfrican_Languages_Indigenous_Knowledge_S.pdf&Expires=1755879288&Signature=S5Z39OODK1AuJaJc-JQ9dm1mvKWPK9iolw-fHj0F-mTK-3HJjTPALHzmMsiwXp39R1uEYDRoc极Dgu-uQ8pCDHUR11wdWscLYik7Hzx2rjzmyo1qUqy186-yXIeJ7OLaqRJU2dpqTrdW5DOeHj1weOvcz~hzJiK26ZbVpxgMXb9nazs8TELcBp2zBq0SEXw1wjstf6BpOx0UiNWat4CI-nga74LuL4-IuO1quR11pfj0pH1极CbL-UStnNxtVXUleYi0NJBbN01iOCAYNM-V5Cjbi04qMJObCelLPyv~K3XVsDjs极gChEd8aRIYjrjIAXlkyclvqRhz8f5NP3Vrvw6AQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" class="sidebar-link" target="_blank">
+            <a href="https://d1wqtxts1xzle7.cloudfront.net/71698530/African_Languages_Indigenous_Knowledge_S20211007-4358-1rttk91.pdf?1738434426=&response-content-disposition=inline%3B+filename%3DAfrican_Languages_Indigenous_Knowledge_S.pdf&Expires=1755879288&Signature=S5Z39OODK1AuJaJc-JQ9dm1mvKWPK9iolw-fHj0F-mTK-3HJjTPALHzmMsiwXp39R1uEYDRoc1Dgu-uQ8pCDHUR11wdWscLYik7Hzx2rjzmyo1qUqy186-yXIeJ7OLaqRJU2dpqTrdW5DOeHj1weOvcz~hzJiK26ZbVpxgMXb9nazs8TELcBp2zBq0SEXw1极jstf6BpOx0UiNWat4CI-nga74极uL4-IuO1quR11pfj0pH1jCbL-UStnNxtVXUleYi0NJBbN01iOCAYNM-V5Cjbi04qMJObCelLPyv~K3XVsDjsWgChEd8aRIYjrjIAXlkyclvqRh极8f5NP3Vrvw6AQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" class="sidebar-link" target="_blank">
                 African languages, indigenous knowledge and the politics of curriculum development in Africa
             </a>
-            <a href="https://d1wqtxts1xzle7.cloudfront.net/71698530/African_Languages_Indigenous_Knowledge_S20211007-4358-1rttk91.pdf?1738434426=&response-content-disposition=inline%3B+filename%3DAfrican_Languages_Indigenous_Knowledge_S.pdf&Expires=1755879288&Signature=S5Z39OODK1AuJaJc-JQ9dm1mvKWPK9iolw-fHj0F-mTK-3HJjTPALHzmMsiwXp39R1uEYDRoc1Dgu-uQ8pCDHUR11wdWscLYik7Hzx2rjzmyo1q极qy186-yXIeJ7OLaqRJU2dpqTrdW5DOeHj1weOvcz~hzJiK26极bVpxgMXb9nazs8TELcBp2zBq0SEXw1wjstf6BpOx0UiNWat4CI-nga74LuL4-IuO1quR11pfj0pH1jCbL-UStnNxtVXUleYi0NJBbN01iOCAYNM-V5Cjbi04qMJObCelLPyv~K3XVsDjsWgChEd8aRIYjrjIAXlkyclvqRhz8f5NP3Vrvw6AQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" class="sidebar-link" target="_blank">
+            <a href="https://d1wqtxts1xzle7.cloudfront.net/71698530/African_Languages_Indigenous_Knowledge_S20211007-4358-1rttk91.pdf?1738434426=&response-content-disposition=inline%3B+filename%3DAfrican_Languages_Indigenous_Knowledge_S.pdf&Expires=1755879288&Signature=S5Z39OODK1AuJaJc-JQ9dm1mvKWPK9iolw-fHj0F-mTK-3HJjTPALHzmMsiwXp39R1uEYDRoc1Dgu-uQ8pCDHUR11wdWscLYik7Hzx2rjzmyo1qUqy186-yXIeJ7OLaqRJU2dpqTrdW5DOeHj1weOvcz~hzJiK26ZbVpxgMXb9nazs8TELcBp2zBq0SEXw1wjstf6BpOx0UiNWat4CI-nga74LuL4-IuO1quR11pfj0pH1jCbL-UStnNxtVXUleYi0NJBbN01iOCAYNM-V5Cjbi04qMJObCelLPyv~K3XVsDjsWgChEd8aRIYjrjIAXlkyclvqRhz8f5NP3Vrvw6AQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" class="sidebar-link" target="_blank">
                 African languages and indigenous knowledge systems
             </a>
         </div>
@@ -566,7 +575,7 @@
                             <li>Language shapes how we perceive and interpret the world</li>
                             <li>Colonial languages privilege Western ways of knowing</li>
                             <li>Students experience alienation when disconnected from their linguistic heritage</li>
-                            <li>Academic success requires more than technical language proficiency</li>
+                            <li>Academic success requires more than technical language proficiency</极>
                         </ul>
                         
                         <p>This perspective challenges traditional academic literacy approaches that focus solely on mastering dominant language conventions without considering power dynamics.</p>
@@ -591,10 +600,10 @@
                             <li>Bilingual education fosters cognitive flexibility</li>
                         </ul>
                         
-                        <p><strong>Practical applications:</strong></p>
+                        <p><strong>Practical applications:</strong></极>
                         <ul>
                             <li>Develop academic materials in indigenous languages</li>
-                            <li>Train teachers in multilingual pedagogies</li>
+                            <li极Train teachers in multilingual pedagogies</li>
                             <li>Create assessment methods that value diverse knowledge systems</li>
                             <li>Establish translation initiatives for academic texts</li>
                         </ul>
@@ -637,14 +646,14 @@
                 <div class="article-card">
                     <h3><i class="fas fa-project-diagram"></i> Transdisciplinary Approaches</h3>
                     <div class="article-content">
-                        <p>Ngũgĩ's philosophy supports collaborative knowledge creation between academic and community spaces, reinforcing the agency of students and communities in defining what counts as valuable knowledge.</p>
+                        <p>Ngũgĩ's philosophy supports collaborative knowledge creation between academic and community spaces, reinforcing the agency极 students and communities in defining what counts as valuable knowledge.</p>
                         
                         <p><strong>Key strategies:</strong></p>
                         <ul>
                             <li>Community-based research projects</li>
                             <li>Integration of local elders as knowledge holders</li>
                             <li>Reciprocal learning between institutions and communities</li>
-                            <li>Development of culturally responsive pedagogies</极>
+                            <li>Development of culturally responsive pedagogies</li>
                         </ul>
                         
                         <p><strong>Benefits for academic literacy:</strong></p>
@@ -733,13 +742,14 @@
             <div class="copyright">
                 <div class="university-logo">
                     <svg viewBox="0 0 100 30" fill="#9d4edd">
-                        <path d="M10,15 Q20,5 30,15 T50,15 T70,15 T90,15" stroke="#d4a017" stroke-width="2" fill="none"/>
-                        <circle cx="50" cy="15" r="5" fill="#d4a017"/>
+                        <path d="M10,15 Q20,5 30,15 T50,15 T70,15 T90,15" stroke="#0ff" stroke-width="2" fill="none"/>
+                        <circle cx="50" cy="15" r="5" fill="#0ff"/>
                         <text x="50" y="25" text-anchor="middle" fill="#aaa" font-size="8">DECOLONIZING EDUCATION</text>
                     </svg>
                 </div>
                 <p>© 2024 African Languages and Renaissance Research Portal</p>
                 <p>Based on the works of Ngũgĩ wa Thiong'o, particularly "Decolonising the Mind"</p>
+                <p>Explore more: <a href="https://oeybers-cpu.github.io/a_lit_models/" target="_blank">Academic Literacy Models</a></p>
             </div>
         </div>
     </div>
@@ -763,9 +773,9 @@
             // Add pulse animation to contact card
             const contactCard = document.querySelector('.contact-card');
             setInterval(() => {
-                contactCard.style.boxShadow = '0 0 30px rgba(212, 160, 23, 0.3)';
+                contactCard.style.boxShadow = '0 0 30px rgba(0, 255, 255, 0.3)';
                 setTimeout(() => {
-                    contactCard.style.boxShadow = '0 0 20px rgba(212, 160, 23, 0.1)';
+                    contactCard.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.1)';
                 }, 1000);
             }, 3000);
             
