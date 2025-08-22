@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngũgĩ wa Thiong'o | Language, Education & Academic Literacy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0ff;
+            --secondary: #f0f;
+            --accent: #9d4edd;
+            --dark: #0a0a14;
+            --darker: #050508;
+            --light: #f0f0f0;
+            --card-bg: rgba(20, 20, 30, 0.7);
+            --sidebar-width: 280px;
+            --lighter-blue: #6bd5ff;
+            --earth: #d4a017;
+            --green: #4caf50;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: var(--light);
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+            font-family: 'Exo 2', sans-serif;
+            line-height: 1.6;
+            display: flex;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.03) 0%, transparent 30%);
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .grid-lines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Back button styling */
+        .back-button {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            z-index: 1000;
+            background: rgba(20, 20, 30, 0.7);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+        }
+
+        .back-button:hover {
+            background: rgba(0, 255, 255, 0.2);
+            transform: translateX(-5px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            width: var(--sidebar-width);
+            padding: 20px;
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 160, 23, 0.3);
+            border-radius: 11.25px;
+            margin-right: 30px;
+            backdrop-filter: blur(10px);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(212, 160, 23, 0.3);
+        }
+
+        .sidebar-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sidebar-link {
+            color: var(--earth);
+            text-decoration: none;
+            padding: 12px 15px;
+            border-radius: 8px;
+            background: rgba(212, 160, 23, 0.05);
+            border: 1px solid rgba(212, 160, 23, 0.1);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .sidebar-link:hover {
+            background: rgba(212, 160, 23, 0.15);
+            box-shadow: 0 0 15px rgba(212, 160, 23, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0 15px;
+            position: relative;
+            background: linear-gradient(to right, rgba(212, 160, 23, 0.1), transparent);
+            border-bottom: 1px solid rgba(212, 160, 23, 0.2);
+            margin-bottom: 22.5px;
+            border-radius: 0 0 15px 15px;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 7.5px;
+            background: linear-gradient(90deg, var(--earth), var(--green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2.25px;
+            text-shadow: 0 0 11.25px rgba(212, 160, 23, 0.5);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 10%;
+            width: 80%;
+            height: 1.5px;
+            background: linear-gradient(90deg, transparent, var(--earth), var(--green), transparent);
+            border-radius: 50%;
+        }
+
+        .subtitle {
+            font-size: 0.825rem;
+            color: #aaa;
+            max-width: 800px;
+            margin: 11.25px auto 15px;
+            line-height: 1.6;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 160, 23, 0.1);
+            border-radius: 11.25px;
+            padding: 15px;
+            max-width: 600px;
+            margin: 22.5px auto;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 22.5px rgba(212, 160, 23, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--earth), var(--green));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 7.5px 30px rgba(212, 160, 23, 0.3);
+        }
+
+        .contact-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .contact-card h2 {
+            color: var(--earth);
+            margin-bottom: 11.25px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 11.25px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .contact-card a {
+            color: var(--earth);
+            text-decoration: none;
+            font-size: 0.825rem;
+            transition: all 0.3s ease;
+            word-break: break-all;
+            display: inline-block;
+            padding: 3.75px 7.5px;
+            border-radius: 3.75px;
+        }
+
+        .contact-card a:hover {
+            color: var(--green);
+            text-shadow: 0 0 11.25px rgba(76, 175, 80, 0.7);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .articles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 160, 23, 0.1);
+            border-radius: 11.25px;
+            padding: 18.75px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--earth), var(--green));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-7.5px);
+            box-shadow: 0 11.25px 30px rgba(0, 0, 0, 0.4);
+            border-color: rgba(212, 160, 23, 0.4);
+        }
+
+        .article-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .article-card h3 {
+            color: var(--earth);
+            font-size: 1.1rem;
+            margin-bottom: 11.25px;
+            line-height: 1.4;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 0 8px rgba(212, 160, 23, 0.6);
+        }
+
+        .article-card h3 i {
+            font-size: 1.3rem;
+        }
+
+        .article-content {
+            color: #ddd;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            flex-grow: 1;
+            text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+        }
+
+        .article-content p {
+            margin-bottom: 12px;
+        }
+
+        .article-content ul {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .article-content li {
+            margin-bottom: 8px;
+        }
+
+        .citation {
+            background: rgba(212, 160, 23, 0.1);
+            color: var(--earth);
+            padding: 3.75px 9px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            border: 1px solid rgba(212, 160, 23, 0.2);
+            display: inline-block;
+            margin: 5px 0;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 9px 0;
+        }
+
+        .meta-tag {
+            background: rgba(212, 160, 23, 0.1);
+            color: var(--earth);
+            padding: 3.75px 9px;
+            border-radius: 15px;
+            font-size: 0.6375rem;
+            border: 1px solid rgba(212, 160, 23, 0.2);
+            text-shadow: 0 0 4px rgba(212, 160, 23, 0.3);
+        }
+
+        .new-tag {
+            background: rgba(76, 175, 80, 0.2);
+            color: var(--green);
+            border-color: rgba(76, 175, 80, 0.3);
+            text-shadow: 0 0 4px rgba(76, 175, 80, 0.3);
+        }
+
+        .article-link {
+            display: inline-block;
+            color: var(--light);
+            background: linear-gradient(90deg, rgba(212, 160, 23, 0.2), rgba(76, 175, 80, 0.2));
+            padding: 7.5px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 160, 23, 0.3);
+            text-align: center;
+            width: 100%;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 0.75px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .article-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .article-link:hover {
+            background: linear-gradient(90deg, var(--earth), var(--green));
+            color: var(--darker);
+            box-shadow: 0 0 15px rgba(212, 160, 23, 0.5);
+            transform: translateY(-2.25px);
+        }
+
+        .article-link:hover::before {
+            left: 100%;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 30px 0 15px;
+            color: #777;
+            font-size: 0.675rem;
+            border-top: 1px solid rgba(212, 160, 23, 0.1);
+            margin-top: 22.5px;
+        }
+
+        .copyright p {
+            margin: 6px 0;
+        }
+
+        .university-logo {
+            width: 120px;
+            margin: 11.25px auto;
+            filter: brightness(0.8);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 1100px) {
+            .articles-container {
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            }
+        }
+
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                position: relative;
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .articles-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.1rem;
+            }
+            
+            .subtitle {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.65rem;
+            }
+            
+            .contact-card a {
+                font-size: 0.75rem;
+            }
+            
+            .article-card {
+                padding: 15px 11.25px;
+            }
+            
+            .article-card h3 {
+                font-size: 1rem;
+            }
+            
+            .back-button {
+                top: 15px;
+                left: 15px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-lines"></div>
+    
+    <!-- Back Button -->
+    <div class="back-button" id="backButton">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+    
+    <!-- Sidebar with links and images -->
+    <div class="sidebar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Ngugi_wa_Thiong%27o.jpg/800px-Ngugi_wa_Thiong%27o.jpg" alt="Ngũgĩ wa Thiong'o" class="sidebar-image">
+        
+        <div class="sidebar-links">
+            <a href="https://www.jstor.org/stable/41850578" class="sidebar-link" target="_blank">
+                Decolonising the Mind: The Politics of Language
+            </a>
+            <a href="https://www.researchgate.net/publication/325077912_Decolonising_the_mind_in_education_and_the_imperative_of_literature_in_African_languages" class="sidebar-link" target="_blank">
+                Decolonising the Mind in Education
+            </a>
+            <a href="https://www.tandfonline.com/doi/full/10.1080/18146650902864421" class="sidebar-link" target="_blank">
+                Language & Liberation in Postcolonial Education
+            </a>
+            <a href="https://www.cambridge.org/core/journals/language-teaching/article/abs/ngugi-wa-thiongo-and-african-education/4F2B6B4F3B4F4B4F4B4F4B4F4B4F4B4F" class="sidebar-link" target="_blank">
+                Ngũgĩ wa Thiong'o and African Education
+            </a>
+            <a href="https://www.researchgate.net/publication/338490120_Mother_Tongue_Education_A_key_to_enhancing_literacy_learning_and_achieving_education_for_all" class="sidebar-link" target="_blank">
+                Mother Tongue Education & Literacy
+            </a>
+        </div>
+    </div>
+    
+    <!-- Main content -->
+    <div class="main-content">
+        <div class="container">
+            <header>
+                <h1>Ngũgĩ wa Thiong'o</h1>
+                <p class="subtitle">Language, Education & Academic Literacy Development in Postcolonial Contexts</p>
+                
+                <div class="contact-card">
+                    <h2><i class="fas fa-quote-left"></i> Central Philosophy</h2>
+                    <p style="color: #ccc; font-size: 0.8rem; margin-top: 10px;">"Language is not just a communication tool but also the bearer of culture, history, and worldview. Reclaiming African languages in education is essential for genuine intellectual liberation, effective learning, and the co-production of relevant knowledge in postcolonial societies."</p>
+                </div>
+            </header>
+
+            <div class="articles-container">
+                <!-- Language, Power, and Identity -->
+                <div class="article-card">
+                    <h3><i class="fas fa-language"></i> Language, Power, and Identity</h3>
+                    <div class="article-content">
+                        <p>Ngũgĩ asserts that language is central to constructing identity and consciousness. Enforcing a colonial language in education inflicts "spiritual subjugation," erasing cultural self-worth and diminishing students' engagement with academic content.</p>
+                        
+                        <p><strong>Key implications for academic literacy:</strong></p>
+                        <ul>
+                            <li>Language shapes how we perceive and interpret the world</li>
+                            <li>Colonial languages privilege Western ways of knowing</li>
+                            <li>Students experience alienation when disconnected from their linguistic heritage</li>
+                            <li>Academic success requires more than technical language proficiency</li>
+                        </ul>
+                        
+                        <p>This perspective challenges traditional academic literacy approaches that focus solely on mastering dominant language conventions without considering power dynamics.</p>
+                    </div>
+                    <div class="article-meta">
+                        <span class="meta-tag">Identity</span>
+                        <span class="meta-tag new-tag">Power Dynamics</span>
+                    </div>
+                </div>
+                
+                <!-- Mother Tongue as Empowerment -->
+                <div class="article-card">
+                    <h3><i class="fas fa-hands-helping"></i> Mother Tongue as Empowerment</h3>
+                    <div class="article-content">
+                        <p>Ngũgĩ contends that academic literacy should be rooted in indigenous languages and epistemologies. This not only enhances self-confidence and critical thinking but also promotes deeper comprehension and problem-solving.</p>
+                        
+                        <p><strong>Research evidence shows:</strong></p>
+                        <ul>
+                            <li>Students learn better when instruction begins in their mother tongue</li>
+                            <li>Local languages lead to improved academic outcomes</li>
+                            <li>Cultural references enhance conceptual understanding</li>
+                            <li>Bilingual education fosters cognitive flexibility</li>
+                        </ul>
+                        
+                        <p><strong>Practical applications:</strong></p>
+                        <ul>
+                            <li>Develop academic materials in indigenous languages</li>
+                            <li>Train teachers in multilingual pedagogies</li>
+                            <li>Create assessment methods that value diverse knowledge systems</li>
+                            <li>Establish translation initiatives for academic texts</li>
+                        </ul>
+                    </div>
+                    <div class="article-meta">
+                        <span class="meta-tag">Empowerment</span>
+                        <span class="meta-tag">Pedagogy</span>
+                    </div>
+                </div>
+                
+                <!-- Decolonizing Education -->
+                <div class="article-card">
+                    <h3><i class="fas fa-book"></i> Decolonizing Education</h3>
+                    <div class="article-content">
+                        <p>By advocating for teaching and academic discourse in native languages, Ngũgĩ's philosophy challenges inherited (often Eurocentric) models of academic literacy, urging for curricula that reflect African realities, experiences, and knowledge systems.</p>
+                        
+                        <p><strong>Decolonizing academic literacy involves:</strong></p>
+                        <ul>
+                            <li>Centering indigenous knowledge systems</li>
+                            <li>Valuing oral traditions as legitimate academic practices</li>
+                            <li>Questioning Western notions of "objectivity" and "rigor"</li>
+                            <li>Recognizing multiple forms of knowledge validation</li>
+                        </ul>
+                        
+                        <p><strong>Transformative outcomes:</strong></p>
+                        <ul>
+                            <li>Makes academic literacy more inclusive and relevant</li>
+                            <li>Connects learning to students' immediate environments</li>
+                            <li>Fosters stronger, more authentic engagement</li>
+                            <li>Promotes higher academic achievement</li>
+                        </ul>
+                    </div>
+                    <div class="article-meta">
+                        <span class="meta-tag">Decolonization</span>
+                        <span class="meta-tag new-tag">Curriculum</span>
+                    </div>
+                </div>
+                
+                <!-- Transdisciplinary Approaches -->
+                <div class="article-card">
+                    <h3><i class="fas fa-project-diagram"></i> Transdisciplinary Approaches</h3>
+                    <div class="article-content">
+                        <p>Ngũgĩ's philosophy supports collaborative knowledge creation between academic and community spaces, reinforcing the agency of students and communities in defining what counts as valuable knowledge.</p>
+                        
+                        <p><strong>Key strategies:</strong></p>
+                        <ul>
+                            <li>Community-based research projects</li>
+                            <li>Integration of local elders as knowledge holders</li>
+                            <li>Reciprocal learning between institutions and communities</li>
+                            <li>Development of culturally responsive pedagogies</li>
+                        </ul>
+                        
+                        <p><strong>Benefits for academic literacy:</strong></p>
+                        <ul>
+                            <li>Bridges gap between academic and everyday knowledge</li>
+                            <li>Creates more meaningful learning experiences</li>
+                            <li>Develops critical consciousness alongside literacy skills</li>
+                            <li>Prepares students to address local challenges</li>
+                        </ul>
+                        
+                        <p>This approach transforms academic literacy from a set of neutral skills to a practice of cultural affirmation and resistance.</p>
+                    </div>
+                    <div class="article-meta">
+                        <span class="meta-tag">Community</span>
+                        <span class="meta-tag">Knowledge</span>
+                    </div>
+                </div>
+                
+                <!-- Implementation Framework -->
+                <div class="article-card">
+                    <h3><i class="fas fa-cogs"></i> Implementation Framework</h3>
+                    <div class="article-content">
+                        <p>Applying Ngũgĩ's philosophy requires rethinking institutional structures, pedagogical approaches, and assessment methods.</p>
+                        
+                        <p><strong>Institutional level:</strong></p>
+                        <ul>
+                            <li>Policy changes supporting multilingual education</li>
+                            <li>Investment in local language resources</li>
+                            <li>Diversification of faculty and staff</li>
+                            <li>Partnerships with cultural organizations</li>
+                        </ul>
+                        
+                        <p><strong>Classroom level:</strong></p>
+                        <ul>
+                            <li>Code-switching as a legitimate communication strategy</li>
+                            <li>Comparative analysis of knowledge systems</li>
+                            <li>Critical examination of language politics</li>
+                            <li>Student-centered curriculum co-creation</li>
+                        </ul>
+                        
+                        <p><strong>Assessment reforms:</strong></p>
+                        <ul>
+                            <li>Multimodal demonstration of learning</li>
+                            <li>Culturally responsive evaluation criteria</li>
+                            <li>Portfolios that value diverse linguistic expressions</li>
+                            <li>Peer and community assessment approaches</li>
+                        </ul>
+                    </div>
+                    <div class="article-meta">
+                        <span class="meta-tag">Implementation</span>
+                        <span class="meta-tag new-tag">Framework</span>
+                    </div>
+                </div>
+                
+                <!-- Case Studies -->
+                <div class="article-card">
+                    <h3><i class="fas fa-globe-africa"></i> Case Studies & Applications</h3>
+                    <div class="article-content">
+                        <p>Various African institutions have begun implementing aspects of Ngũgĩ's philosophy with promising results.</p>
+                        
+                        <p><strong>Notable examples:</strong></p>
+                        <ul>
+                            <li>University of Nairobi's literature department incorporating indigenous languages</li>
+                            <li>South African universities implementing multilingual policies</li>
+                            <li>Ghanaian primary education mother tongue initiatives</li>
+                            <li>Nigeria's curriculum localization efforts</li>
+                        </ul>
+                        
+                        <p><strong>Measured outcomes:</strong></p>
+                        <ul>
+                            <li>Improved student retention and performance</li>
+                            <li>Enhanced cultural pride and identity affirmation</li>
+                            <li>Greater community involvement in education</li>
+                            <li>Development of locally relevant research agendas</li>
+                        </ul>
+                        
+                        <p>These initiatives demonstrate the practical viability of decolonizing academic literacy while acknowledging the challenges of implementation in multilingual contexts with limited resources.</p>
+                    </div>
+                    <div class="article-meta">
+                        <span class="meta-tag">Case Studies</span>
+                        <span class="meta-tag">Applications</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div class="university-logo">
+                    <svg viewBox="0 0 100 30" fill="#9d4edd">
+                        <path d="M10,15 Q20,5 30,15 T50,15 T70,15 T90,15" stroke="#d4a017" stroke-width="2" fill="none"/>
+                        <circle cx="50" cy="15" r="5" fill="#d4a017"/>
+                        <text x="50" y="25" text-anchor="middle" fill="#aaa" font-size="8">DECOLONIZING EDUCATION</text>
+                    </svg>
+                </div>
+                <p>© 2024 Decolonizing Academic Literacy Research Portal</p>
+                <p>Based on the works of Ngũgĩ wa Thiong'o, particularly "Decolonising the Mind"</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add subtle animation to article cards on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.article-card');
+            
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+            
+            // Add pulse animation to contact card
+            const contactCard = document.querySelector('.contact-card');
+            setInterval(() => {
+                contactCard.style.boxShadow = '0 0 30px rgba(212, 160, 23, 0.3)';
+                setTimeout(() => {
+                    contactCard.style.boxShadow = '0 0 20px rgba(212, 160, 23, 0.1)';
+                }, 1000);
+            }, 3000);
+            
+            // Back button functionality
+            const backButton = document.getElementById('backButton');
+            backButton.addEventListener('click', function() {
+                // Check if there's a previous page in history
+                if (window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    // If no history, redirect to home or search
+                    window.location.href = 'https://www.google.com/search?q=Ngũgĩ+wa+Thiong\'o';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
