@@ -23,17 +23,21 @@
             --card-bg: rgba(20, 20, 30, 0.7);
             --sidebar-width: 280px;
             --lighter-blue: #6bd5ff;
+            /* Added from previous code */
+            --golden-yellow: #FFD700;
         }
 
         body {
+            /* --- Updated background and base styles to match previous code --- */
             background: linear-gradient(135deg, var(--darker), var(--dark));
             color: var(--light);
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px; /* Reduced default padding */
             position: relative;
             overflow-x: hidden;
             font-family: 'Exo 2', sans-serif;
             line-height: 1.6;
+            /* --- End of update --- */
             display: flex;
         }
 
@@ -66,76 +70,87 @@
             z-index: -1;
         }
 
-        /* Back button styling */
-        .back-button {
-            position: fixed;
-            top: 25px;
-            left: 25px;
-            z-index: 1000;
-            background: rgba(20, 20, 30, 0.7);
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            color: var(--primary);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+        /* --- Removed .back-button styles --- */
+
+
+        /* --- Header Home Link Style (Copied from previous code) --- */
+        .header-home-link {
+            position: absolute;
+            top: 15px; /* Adjusted for smaller screens */
+            left: 15px; /* Adjusted for smaller screens */
+            display: inline-block;
+            text-align: center;
+            padding: 7px 14px; /* Slightly reduced padding */
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: 1px solid var(--light);
+            border-radius: 20px;
+            color: var(--darker);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem; /* Slightly smaller text */
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+            box-shadow:
+                0 0 7px var(--primary),
+                0 0 13px var(--secondary),
+                inset 0 0 4px rgba(255, 255, 255, 0.5);
+            z-index: 10;
         }
 
-        .back-button:hover {
-            background: rgba(0, 255, 255, 0.2);
-            transform: translateX(-5px);
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+        .header-home-link:hover {
+            transform: scale(1.03) translateY(-1.5px); /* Slightly reduced effect */
+            box-shadow:
+                0 0 12px var(--primary),
+                0 0 20px var(--secondary),
+                inset 0 0 8px rgba(255, 255, 255, 0.8);
+            color: var(--darker);
         }
+        /* --- End of Header Home Link Style --- */
+
 
         /* Sidebar styling */
         .sidebar {
             width: var(--sidebar-width);
-            padding: 20px;
+            padding: 15px; /* Reduced padding */
             background: var(--card-bg);
             border: 1px solid rgba(0, 255, 255, 0.1);
-            border-radius: 11.25px;
-            margin-right: 30px;
+            border-radius: 9px; /* Reduced radius */
+            margin-right: 20px; /* Reduced margin */
             backdrop-filter: blur(10px);
             height: fit-content;
             position: sticky;
-            top: 20px;
+            top: 15px; /* Adjusted for body padding */
         }
 
         .sidebar-image {
             width: 100%;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            border-radius: 6px; /* Reduced radius */
+            margin-bottom: 15px; /* Reduced margin */
             border: 1px solid rgba(0, 255, 255, 0.2);
         }
 
         .sidebar-links {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px; /* Reduced gap */
         }
 
         .sidebar-link {
             color: var(--primary);
             text-decoration: none;
-            padding: 12px 15px;
-            border-radius: 8px;
+            padding: 10px 12px; /* Reduced padding */
+            border-radius: 6px; /* Reduced radius */
             background: rgba(0, 255, 255, 0.05);
             border: 1px solid rgba(0, 255, 255, 0.1);
             transition: all 0.3s ease;
-            font-size: 0.9rem;
+            font-size: 0.8rem; /* Reduced font size */
             text-align: center;
         }
 
         .sidebar-link:hover {
             background: rgba(0, 255, 255, 0.15);
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-            transform: translateY(-2px);
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.5); /* Reduced shadow */
+            transform: translateY(-1.5px); /* Reduced effect */
         }
 
         .main-content {
@@ -150,24 +165,28 @@
 
         header {
             text-align: center;
-            padding: 30px 0 15px;
+            /* --- Reduced header padding and margins --- */
+            padding: 20px 0 10px;
+            margin-bottom: 15px;
+            /* --- End of reduction --- */
             position: relative;
             background: linear-gradient(to right, rgba(0, 255, 255, 0.1), transparent);
             border-bottom: 1px solid rgba(0, 255, 255, 0.2);
-            margin-bottom: 22.5px;
-            border-radius: 0 0 15px 15px;
+            border-radius: 0 0 10px 10px; /* Reduced radius */
         }
 
         h1 {
-            font-size: 2.4rem;
-            margin-bottom: 7.5px;
+            /* --- Reduced header font size --- */
+            font-size: 1.8rem; /* Reduced from 2.4rem */
+            /* --- End of reduction --- */
+            margin-bottom: 6px; /* Reduced margin */
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             text-transform: uppercase;
-            letter-spacing: 2.25px;
-            text-shadow: 0 0 11.25px rgba(0, 255, 255, 0.5);
+            letter-spacing: 1.8px; /* Reduced spacing */
+            text-shadow: 0 0 9px rgba(0, 255, 255, 0.5); /* Reduced shadow */
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
             position: relative;
@@ -177,39 +196,39 @@
         h1::after {
             content: '';
             position: absolute;
-            bottom: -6px;
+            bottom: -5px; /* Reduced position */
             left: 10%;
             width: 80%;
-            height: 1.5px;
+            height: 1.2px; /* Reduced height */
             background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
             border-radius: 50%;
         }
 
         .subtitle {
-            font-size: 0.825rem;
+            font-size: 0.7rem; /* Adjusted base size */
             color: #aaa;
             max-width: 800px;
-            margin: 11.25px auto 15px;
-            line-height: 1.6;
+            margin: 8px auto 10px; /* Reduced margins */
+            line-height: 1.5; /* Slightly tighter line height */
         }
         
         .header-image {
-            width: 200px;
-            margin: 15px auto;
-            border-radius: 8px;
-            border: 2px solid rgba(0, 255, 255, 0.3);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            width: 150px; /* Reduced width */
+            margin: 12px auto; /* Reduced margin */
+            border-radius: 6px; /* Reduced radius */
+            border: 1px solid rgba(0, 255, 255, 0.3); /* Reduced border width */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Reduced shadow */
         }
 
         .contact-card {
             background: var(--card-bg);
-            border: 1px solid rgba(0, 255, 255, 极.1);
-            border-radius: 11.25px;
-            padding: 15px;
-            max-width: 600px;
-            margin: 22.5px auto;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            border-radius: 9px; /* Reduced radius */
+            padding: 12px; /* Reduced padding */
+            max-width: 95%; /* Increased max-width for smaller screens */
+            margin: 15px auto; /* Reduced margin */
             backdrop-filter: blur(10px);
-            box-shadow: 0 0 22.5px rgba(0, 255, 255, 0.1);
+            box-shadow: 0 0 18px rgba(0, 255, 255, 0.1); /* Reduced shadow */
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -221,7 +240,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 3px;
+            height: 2.4px; /* Reduced height */
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             transform: scaleX(0);
             transform-origin: left;
@@ -229,8 +248,8 @@
         }
 
         .contact-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 7.5px 30px rgba(0, 255, 255, 0.3);
+            transform: translateY(-5px); /* Reduced effect */
+            box-shadow: 0 6px 24px rgba(0, 255, 255, 0.3); /* Reduced shadow */
         }
 
         .contact-card:hover::before {
@@ -239,28 +258,28 @@
 
         .contact-card h2 {
             color: var(--primary);
-            margin-bottom: 11.25px;
-            font-size: 1.2rem;
+            margin-bottom: 9px; /* Reduced margin */
+            font-size: 1rem; /* Reduced font size */
             display: flex;
             align-items: center;
-            gap: 11.25px;
+            gap: 9px; /* Reduced gap */
             font-family: 'Orbitron', sans-serif;
         }
 
         .contact-card a {
-            color: var(--primary);
+            color: var(--primary); /* Changed to primary color */
             text-decoration: none;
-            font-size: 0.825rem;
+            font-size: 0.8rem; /* Reduced font size */
             transition: all 0.3s ease;
-            word-break: break-all;
+            word-break: break-word; /* Changed to break-word for better wrapping */
             display: inline-block;
-            padding: 3.75px 7.5px;
-            border-radius: 3.75px;
+            padding: 3px 6px; /* Reduced padding */
+            border-radius: 3px; /* Reduced radius */
         }
 
         .contact-card a:hover {
-            color: var(--secondary);
-            text-shadow: 0 0 11.25px rgba(255, 0, 255, 0.7);
+            color: var(--secondary); /* Changed to secondary color */
+            text-shadow: 0 0 9px rgba(255, 0, 255, 0.7); /* Adjusted shadow */
             background: rgba(255, 255, 255, 0.1);
         }
 
@@ -268,15 +287,15 @@
         .articles-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin: 30px 0;
+            gap: 24px; /* Reduced gap */
+            margin: 24px 0; /* Reduced margin */
         }
 
         .article-card {
             background: var(--card-bg);
             border: 1px solid rgba(0, 255, 255, 0.1);
-            border-radius: 11.25px;
-            padding: 18.75px;
+            border-radius: 9px; /* Reduced radius */
+            padding: 15px; /* Reduced padding */
             transition: all 0.4s ease;
             backdrop-filter: blur(5px);
             position: relative;
@@ -292,16 +311,16 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 3px;
+            height: 2.4px; /* Reduced height */
             background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transform: scale极(0);
+            transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.5s ease;
         }
 
         .article-card:hover {
-            transform: translateY(-7.5px);
-            box-shadow: 0 11.25px 30px rgba(0, 0, 0, 0.4);
+            transform: translateY(-6px); /* Reduced effect */
+            box-shadow: 0 9px 24px rgba(0, 0, 0, 0.4); /* Reduced shadow */
             border-color: rgba(0, 255, 255, 0.4);
         }
 
@@ -311,84 +330,84 @@
 
         .article-card h3 {
             color: var(--lighter-blue);
-            font-size: 1.1rem;
-            margin-bottom: 11.25px;
-            line-height: 1.4;
+            font-size: 1rem; /* Reduced font size */
+            margin-bottom: 9px; /* Reduced margin */
+            line-height: 1.3; /* Slightly tighter line height */
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 10px;
-            text-shadow: 0 0 8px rgba(107, 213, 255, 0.6);
+            gap: 8px; /* Reduced gap */
+            text-shadow: 0 0 6px rgba(107, 213, 255, 0.6); /* Reduced shadow */
         }
 
         .article-card h3 i {
-            font-size: 1.3rem;
+            font-size: 1.1rem; /* Reduced font size */
         }
 
         .article-content {
             color: #ddd;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
+            font-size: 0.8rem; /* Reduced font size */
+            line-height: 1.5; /* Slightly tighter line height */
+            margin-bottom: 12px; /* Reduced margin */
             flex-grow: 1;
-            text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.2); /* Reduced shadow */
             overflow-y: auto;
         }
 
         .article-content p {
-            margin-bottom: 12px;
+            margin-bottom: 10px; /* Reduced margin */
         }
 
         .article-content ul {
-            padding-left: 20px;
-            margin-bottom: 12px;
+            padding-left: 16px; /* Reduced padding */
+            margin-bottom: 10px; /* Reduced margin */
         }
 
         .article-content li {
-            margin-bottom: 8px;
+            margin-bottom: 6px; /* Reduced margin */
         }
 
         .citation {
             background: rgba(0, 255, 255, 0.1);
             color: var(--primary);
-            padding: 3.75极 9px;
-            border-radius: 15px;
-            font-size: 0.7rem;
+            padding: 3px 7px; /* Reduced padding */
+            border-radius: 12px; /* Reduced radius */
+            font-size: 0.55rem; /* Reduced font size */
             border: 1px solid rgba(0, 255, 255, 0.2);
             display: inline-block;
-            margin: 5px 0;
+            margin: 4px 0; /* Reduced margin */
         }
 
         .article-meta {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin: 9px 0;
+            gap: 8px; /* Reduced gap */
+            margin: 7px 0; /* Reduced margin */
         }
 
         .meta-tag {
             background: rgba(0, 255, 255, 0.1);
             color: var(--primary);
-            padding: 3.75px 9px;
-            border-radius: 15px;
-            font-size: 0.6375rem;
+            padding: 3px 7px; /* Reduced padding */
+            border-radius: 12px; /* Reduced radius */
+            font-size: 0.55rem; /* Reduced font size */
             border: 1px solid rgba(0, 255, 255, 0.2);
-            text-shadow: 0 0 4px rgba(0, 255, 255, 0.3);
+            text-shadow: 0 0 3px rgba(0, 255, 255, 0.3); /* Reduced shadow */
         }
 
         .new-tag {
             background: rgba(157, 78, 221, 0.2);
             color: var(--accent);
             border-color: rgba(157, 78, 221, 0.3);
-            text-shadow: 0 0 4px rgba(157, 78, 221, 0.3);
+            text-shadow: 0 0 3px rgba(157, 78, 221, 0.3); /* Reduced shadow */
         }
 
         .article-link {
             display: inline-block;
             color: var(--light);
             background: linear-gradient(90deg, rgba(0, 255, 255, 0.2), rgba(157, 78, 221, 0.2));
-            padding: 7.5px 15px;
-            border-radius: 6px;
+            padding: 6px 12px; /* Reduced padding */
+            border-radius: 5px; /* Reduced radius */
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
@@ -396,10 +415,11 @@
             text-align: center;
             width: 100%;
             font-family: 'Orbitron', sans-serif;
-            letter-spacing: 0.75px;
+            letter-spacing: 0.6px; /* Reduced spacing */
             position: relative;
             overflow: hidden;
-            margin-top: 15px;
+            margin-top: 12px; /* Reduced margin */
+            font-size: 0.75rem; /* Added font size */
         }
 
         .article-link::before {
@@ -416,25 +436,26 @@
         .article-link:hover {
             background: linear-gradient(90deg, var(--primary), var(--accent));
             color: var(--darker);
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-            transform: translateY(-2.25px);
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.5); /* Reduced shadow */
+            transform: translateY(-1.8px); /* Reduced effect */
         }
 
         .article-link:hover::before {
             left: 100%;
         }
 
+
         .copyright {
             text-align: center;
-            padding: 30px 0 15px;
+            padding: 25px 0 12px; /* Adjusted padding */
             color: #777;
-            font-size: 0.675rem;
+            font-size: 0.6rem; /* Adjusted font size */
             border-top: 1px solid rgba(0, 255, 255, 0.1);
-            margin-top: 22.5px;
+            margin-top: 20px; /* Adjusted margin */
         }
 
         .copyright p {
-            margin: 6px 0;
+            margin: 5px 0; /* Adjusted margin */
         }
 
         .copyright a {
@@ -445,16 +466,17 @@
 
         .copyright a:hover {
             color: var(--secondary);
-            text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+            text-shadow: 0 0 8px rgba(255, 0, 255, 0.7); /* Reduced shadow */
         }
 
         .university-logo {
-            width: 120px;
-            margin: 11.25px auto;
+            width: 100px; /* Reduced width */
+            margin: 9px auto; /* Reduced margin */
             filter: brightness(0.8);
             opacity: 0.7;
         }
 
+        /* --- Media Queries for Mobile Compatibility (Aligned with previous code) --- */
         @media (max-width: 1100px) {
             .articles-container {
                 grid-template-columns: 1fr 1fr;
@@ -464,13 +486,14 @@
         @media (max-width: 900px) {
             body {
                 flex-direction: column;
+                padding: 10px; /* Reduced padding for small screens */
             }
             
             .sidebar {
                 width: 100%;
                 position: relative;
                 margin-right: 0;
-                margin-bottom: 30px;
+                margin-bottom: 20px; /* Reduced margin */
             }
             
             .articles-container {
@@ -479,66 +502,99 @@
             
             .article-card {
                 aspect-ratio: auto;
-                min-height: 300px;
+                min-height: 250px; /* Reduced min height */
             }
             
             h1 {
-                font-size: 2.1rem;
+                font-size: 1.6rem; /* Adjusted for smaller screens */
             }
             
             .subtitle {
-                font-size: 0.75rem;
+                font-size: 0.65rem; /* Adjusted font size */
             }
             
             .header-image {
-                width: 150px;
+                width: 120px; /* Reduced width */
+            }
+
+            /* Adjust header home link for medium screens */
+            .header-home-link {
+                top: 12px;
+                left: 12px;
+                padding: 6px 12px;
+                font-size: 0.75rem;
             }
         }
 
         @media (max-width: 600px) {
             h1 {
-                font-size: 1.65rem;
+                font-size: 1.4rem; /* Adjusted font size */
             }
             
             .contact-card a {
-                font-size: 0.75rem;
+                font-size: 0.7rem; /* Adjusted font size */
             }
             
             .article-card {
-                padding: 15px 11.25px;
+                padding: 12px 9px; /* Adjusted padding */
             }
             
             .article-card h3 {
-                font-size: 1rem;
+                font-size: 0.9rem; /* Adjusted font size */
             }
             
-            .back-button {
-                top: 15px;
-                left: 15px;
-                width: 40px;
-                height: 40px;
-            }
+            /* Removed .back-button adjustments as it's removed */
             
             .header-image {
-                width: 120px;
+                width: 100px; /* Reduced width */
+            }
+
+            /* Adjust header home link for small screens */
+            .header-home-link {
+                top: 10px;
+                left: 10px;
+                padding: 5px 10px;
+                font-size: 0.7rem;
+            }
+
+            .subtitle {
+                font-size: 0.6rem; /* Adjusted font size */
+            }
+
+            .sidebar {
+                padding: 10px; /* Reduced padding */
             }
         }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.2rem; /* Adjusted font size */
+            }
+
+            .article-card h3 {
+                font-size: 0.85rem; /* Adjusted font size */
+            }
+
+            .contact-card a {
+                font-size: 0.65rem; /* Adjusted font size */
+            }
+        }
+        /* --- End of Media Queries --- */
     </style>
 </head>
 <body>
     <div class="grid-lines"></div>
     
-    <!-- Back Button -->
-    <div class="back-button" id="backButton">
-        <i class="fas fa-arrow-left"></i>
-    </div>
+    <!-- --- Added Header Home Link --- -->
+    <a href="https://oeybers-cpu.github.io/a_lit_models/" class="header-home-link">Home</a>
+    <!-- --- End of Header Home Link --- -->
     
     <!-- Sidebar with links and images -->
     <div class="sidebar">
         <img src="https://github.com/oeybers-cpu/ngugi/blob/main/Wa%20Thiongo.jpeg?raw=true" alt="Ngũgĩ wa Thiong'o" class="sidebar-image">
         
         <div class="sidebar-links">
-            <a href="https://scholarblogs.emory.edu/postcolonialstudies/2014极06/11/ngugi-wa-thiongo/" class="sidebar-link" target="_blank">
+            <a href="https://scholarblogs.emory.edu/postcolonialstudies/2014/06/11/ngugi-wa-thiongo/" class="sidebar-link" target="_blank">
                 Ngugi wa Thiong'o
             </a>
             <a href="https://www.researchgate.net/publication/374056932_Book_Review_-Decolonising_the_Mind_by_Ngugi_wa_Thiong'o_-Africa_A_New_Perspective_International_Journal_of_Academic_Research_in_Business_Arts_and_Science_IJARBASCOM#fullTextFileContent" class="sidebar-link" target="_blank">
@@ -547,7 +603,7 @@
             <a href="https://toyinfalolanetwork.org/language-as-liberation-ngugi-wa-thiongo-kwesi-prah-and-the-reclamation-of-african-voices/" class="sidebar-link" target="_blank">
                 Language as Liberation
             </a>
-            <a href="https://d1wqtxts1xzle7.cloudfront.net/71698530/African_Languages_Indigenous_Knowledge_S20211007-4358-1rttk91.pdf?1738434426=&response-content-disposition=inline%3B+filename%3DAfrican_Languages_Indigenous_Knowledge_S.pdf&Expires=1755879288&Signature=S5Z39OODK1AuJaJc-JQ9dm1mvKWPK9iolw-fHj0F-mTK-3HJjTPALHzmMsiwXp39R1uEYDRoc1Dgu-uQ8pCDHUR11wdWscLYik7Hzx2rjzmyo1qUqy186-yXIeJ7OLaqRJU2dpqTrdW5DOeHj1weOvcz~hzJiK26ZbVpxgMXb9naz极8TELcBp2zBq0SEXw1wjstf6BpOx0UiNWat4CI-nga74LuL4-IuO1quR11pfj0pH1jCbL-UStnNxtVXUleYi0NJBbN01iOCAYNM-V5Cjbi04qMJObCelLPyv~K3XVsDjsWg极Ed8aRIYjrjIAXlkyclvqRhz8f5NP3Vrvw6AQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" class="sidebar-link" target="_blank">
+            <a href="https://d1wqtxts1xzle7.cloudfront.net/71698530/African_Languages_Indigenous_Knowledge_S20211007-4358-1rttk91.pdf?1738434426=&response-content-disposition=inline%3B+filename%3DAfrican_Languages_Indigenous_Knowledge_S.pdf&Expires=1755879288&Signature=S5Z39OODK1AuJaJc-JQ9dm1mvKWPK9iolw-fHj0F-mTK-3HJjTPALHzmMsiwXp39R1uEYDRoc1Dgu-uQ8pCDHUR11wdWscLYik7Hzx2rjzmyo1qUqy186-yXIeJ7OLaqRJU2dpqTrdW5DOeHj1weOvcz~hzJiK26ZbVpxgMXb9nazs8TELcBp2zBq0SEXw1wjstf6BpOx0UiNWat4CI-nga74LuL4-IuO1quR11pfj0pH1jCbL-UStnNxtVXUleYi0NJBbN01iOCAYNM-V5Cjbi04qMJObCelLPyv~K3XVsDjsWgChEd8aRIYjrjIAXlkyclvqRhz8f5NP3Vrvw6AQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" class="sidebar-link" target="_blank">
                 Languages, Knowledge & Curriculum
             </a>
             <a href="https://d1wqtxts1xzle7.cloudfront.net/71698530/African_Languages_Indigenous_Knowledge_S20211007-4358-1rttk91.pdf?1738434426=&response-content-disposition=inline%3B+filename%3DAfrican_Languages_Indigenous_Knowledge_S.pdf&Expires=1755879288&Signature=S5Z39OODK1AuJaJc-JQ9dm1mvKWPK9iolw-fHj0F-mTK-3HJjTPALHzmMsiwXp39R1uEYDRoc1Dgu-uQ8pCDHUR11wdWscLYik7Hzx2rjzmyo1qUqy186-yXIeJ7OLaqRJU2dpqTrdW5DOeHj1weOvcz~hzJiK26ZbVpxgMXb9nazs8TELcBp2zBq0SEXw1wjstf6BpOx0UiNWat4CI-nga74LuL4-IuO1quR11pfj0pH1jCbL-UStnNxtVXUleYi0NJBbN01iOCAYNM-V5Cjbi04qMJObCelLPyv~K3XVsDjsWgChEd8aRIYjrjIAXlkyclvqRhz8f5NP3Vrvw6AQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" class="sidebar-link" target="_blank">
@@ -567,7 +623,7 @@
                 
                 <div class="contact-card">
                     <h2><i class="fas fa-quote-left"></i> Central Philosophy</h2>
-                    <p style="color: #ccc; font-size: 0.8rem; margin-top: 10px;">"Language is not just a communication tool but also the bearer of culture, history, and worldview. Reclaiming African languages in education is essential for genuine intellectual liberation, effective learning, and the co-production of relevant knowledge in postcolonial societies."</p>
+                    <p style="color: #ccc; font-size: 0.7rem; margin-top: 8px;">"Language is not just a communication tool but also the bearer of culture, history, and worldview. Reclaiming African languages in education is essential for genuine intellectual liberation, effective learning, and the co-production of relevant knowledge in postcolonial societies."</p>
                 </div>
             </header>
 
@@ -596,7 +652,7 @@
                 
                 <!-- Mother Tongue as Empowerment -->
                 <div class="article-card">
-                    <h3></i> Mother Tongue as Empowerment</h3>
+                    <h3><i class="fas fa-heart"></i> Mother Tongue as Empowerment</h3> <!-- Added icon -->
                     <div class="article-content">
                         <p>Ngũgĩ contends that academic literacy should be rooted in indigenous languages and epistemologies. This not only enhances self-confidence and critical thinking but also promotes deeper comprehension and problem-solving.</p>
                         
@@ -629,7 +685,7 @@
                         <p>By advocating for teaching and academic discourse in native languages, Ngũgĩ's philosophy challenges inherited (often Eurocentric) models of academic literacy, urging for curricula that reflect African realities, experiences, and knowledge systems.</p>
                         
                         <p><strong>Decolonizing academic literacy involves:</strong></p>
-                        
+                        <ul> <!-- Fixed missing opening <ul> tag -->
                             <li>Centering indigenous knowledge systems</li>
                             <li>Valuing oral traditions as legitimate academic practices</li>
                             <li>Questioning Western notions of "objectivity" and "rigor"</li>
@@ -676,7 +732,7 @@
                     </div>
                     <div class="article-meta">
                         <span class="meta-tag">Community</span>
-                        <span class="meta极ag">Knowledge</span>
+                        <span class="meta-tag">Knowledge</span> <!-- Fixed typo: meta极ag -> meta-tag -->
                     </div>
                 </div>
                 
@@ -694,7 +750,7 @@
                             <li>Partnerships with cultural organizations</li>
                         </ul>
                         
-                        <p><strong>Classroom level:</极></p>
+                        <p><strong>Classroom level:</strong></p> <!-- Fixed typo: "Classroom level:</极>" -> "Classroom level:" -->
                         <ul>
                             <li>Code-switching as a legitimate communication strategy</li>
                             <li>Comparative analysis of knowledge systems</li>
@@ -781,23 +837,13 @@
             // Add pulse animation to contact card
             const contactCard = document.querySelector('.contact-card');
             setInterval(() => {
-                contactCard.style.boxShadow = '0 0 30px rgba(0, 255, 255, 0.3)';
+                contactCard.style.boxShadow = '0 0 25px rgba(0, 255, 255, 0.3)'; /* Reduced shadow */
                 setTimeout(() => {
-                    contactCard.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.1)';
+                    contactCard.style.boxShadow = '0 0 15px rgba(0, 255, 255, 0.1)'; /* Reduced shadow */
                 }, 1000);
             }, 3000);
             
-            // Back button functionality
-            const backButton = document.getElementById('backButton');
-            backButton.addEventListener('click', function() {
-                // Check if there's a previous page in history
-                if (window.history.length > 1) {
-                    window.history.back();
-                } else {
-                    // If no history, redirect to home or search
-                    window.location.href = 'https://www.google.com/search?q=Ngũgĩ+wa+Thiong\'o';
-                }
-            });
+            // --- Removed Back button functionality ---
         });
     </script>
 </body>
